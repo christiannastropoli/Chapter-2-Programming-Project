@@ -29,3 +29,4 @@ cout << "In " << YEAR_7 << " years: " << riseIn7Years
 cout << "In " << YEAR_10 << " years: " << riseIn10Years
 << " mm higher" << endl;
 return 0;
+}
