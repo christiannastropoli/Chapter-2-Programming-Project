@@ -1,32 +1,39 @@
-#include <iostream>
+include <iostream>
 #include <iomanip>
+#include <string>
 
 using namespace std;
 
 int main() {
-// Current ocean rise rate: 1.5 mm per year
-const double RISE_RATE_MM_PER_YEAR = 1.5;
-// Years to project
-const int YEAR_5 = 5;
-const int YEAR_7 = 7;
-const int YEAR_10 = 10;
-// Calculate projected rise for each period
-double riseIn5Years = RISE_RATE_MM_PER_YEAR * YEAR_5;
-double riseIn7Years = RISE_RATE_MM_PER_YEAR * YEAR_7;
-double riseIn10Years = RISE_RATE_MM_PER_YEAR * YEAR_10;
-// Display header
-cout << "Ocean Level Rise Projection" << endl;
-cout << "Current rate: " << RISE_RATE_MM_PER_YEAR
-<< " mm/year" << endl;
-cout << string(50, '-') << endl;
-// Set output formatting
-cout << fixed << setprecision(1);
-// Display results
-cout << "In " << YEAR_5 << " years: " << riseIn5Years
-<< " mm higher" << endl;
-cout << "In " << YEAR_7 << " years: " << riseIn7Years
-<< " mm higher" << endl;
-cout << "In " << YEAR_10 << " years: " << riseIn10Years
-<< " mm higher" << endl;
+  
+// Car specifications
+const double TANK_CAPACITY_GALLONS = 20.0;
+const double TOWN_MPG = 23.5;
+const double HIGHWAY_MPG = 28.9;
+  
+// Calculate maximum distance on one tank
+double townDistance = TANK_CAPACITY_GALLONS * TOWN_MPG;
+double highwayDistance = TANK_CAPACITY_GALLONS * HIGHWAY_MPG;
+  
+// Display results with professional formatting
+cout << "=== Car Fuel Range Calculator ===" << endl;
+cout << "Tank Capacity: " << fixed << setprecision(1)
+<< TANK_CAPACITY_GALLONS << " gallons" << endl;
+  
+cout << string(40, '-') << endl;
+cout << left << setw(20) << "Driving Condition"
+<< setw(15) << "MPG"
+<< setw(15) << "Max Distance" << endl;
+cout << string(40, '-') << endl;
+cout << left << setw(20) << "In Town"
+<< setw(15) << setprecision(1) << TOWN_MPG
+<< setw(15) << setprecision(1) << townDistance
+<< "miles" << endl;
+cout << left << setw(20) << "On Highway"
+<< setw(15) << setprecision(1) << HIGHWAY_MPG
+<< setw(15) << setprecision(1) << highwayDistance
+<< "miles" << endl;
+cout << string(40, '-') << endl;
+cout << "Formula: Distance = Tank Capacity × MPG" << endl;
 return 0;
 }
